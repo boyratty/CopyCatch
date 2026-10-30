@@ -4,9 +4,14 @@ A local clipboard-history app for macOS (13 Ventura or later) that also reads te
 
 ## Build and run
 
-1. Unzip `ClipDrop.zip` somewhere, e.g. `~/Developer/ClipDrop`.
-2. If you've never compiled anything on this Mac: `xcode-select --install` (full Xcode not needed).
-3. In Terminal:
+1. If you've never compiled anything on this Mac: `xcode-select --install` (full Xcode not needed).
+2. Download the code into `~/Developer/ClipDrop`:
+
+```bash
+git clone https://github.com/boyratty/ClipDrop.git ~/Developer/ClipDrop
+```
+
+3. Build and install:
 
 ```bash
 cd ~/Developer/ClipDrop
@@ -14,7 +19,7 @@ chmod +x build.sh
 ./build.sh install
 ```
 
-That compiles the app, copies it to `~/Applications` and opens it. Run the same command again after changing any code.
+That compiles the app, copies it to `~/Applications` and opens it. Run the same command again after changing any code, or after `git pull` to get the latest version.
 
 **First-run permissions**
 - *Capture Text from Screen* (⌘⇧2) needs **Screen Recording** permission: System Settings › Privacy & Security › Screen & System Audio Recording › enable ClipDrop, then relaunch.
