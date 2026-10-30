@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4B37B8"/>
+      <stop offset="1" stop-color="#181243"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="floor" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wire" gradientUnits="userSpaceOnUse" x1="300" y1="250" x2="560" y2="800">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#D5DBE6"/>
+      <stop offset="1" stop-color="#9AA4B6"/>
+    </linearGradient>
+    <radialGradient id="head" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#AEB7C8"/>
+    </radialGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5EC8FF"/>
+      <stop offset="1" stop-color="#B8E9FF"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect x="100" y="100" width="824" height="824" rx="185"/>
+    </clipPath>
+    <filter id="drop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background tile -->
+  <g clip-path="url(#squircle)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#bg)"/>
+    <!-- Spotlight -->
+    <polygon points="430,100 530,100 790,924 170,924" fill="url(#beam)"/>
+    <ellipse cx="480" cy="805" rx="300" ry="55" fill="url(#floor)"/>
+  </g>
+
+  <!-- Shadow under feet -->
+  <ellipse cx="425" cy="800" rx="120" ry="16" fill="#0B0826" opacity="0.45"/>
+
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Dark outline pass so the wire reads at small sizes -->
+    <g stroke="#140F3A" stroke-width="40" opacity="0.55">
+      <path d="M420,622 L372,786 L330,786 M420,622 L470,786 L512,786"/>
+      <path d="M475,455 L560,395 L640,368"/>
+      <path d="M365,455 L305,520 L360,575"/>
+      <path d="M395,470 L395,560 A25,25 0 0 0 445,560 L445,420 A40,40 0 0 0 365,420 L365,570 A55,55 0 0 0 475,570 L475,440"/>
+      <path d="M420,380 L420,362"/>
+    </g>
+    <!-- Silver wire -->
+    <g stroke="url(#wire)" stroke-width="24">
+      <!-- legs and feet -->
+      <path d="M420,622 L372,786 L330,786 M420,622 L470,786 L512,786"/>
+      <!-- raised arm (the drop) -->
+      <path d="M475,455 L560,395 L640,368"/>
+      <!-- hand on hip -->
+      <path d="M365,455 L305,520 L360,575"/>
+      <!-- paperclip body -->
+      <path d="M395,470 L395,560 A25,25 0 0 0 445,560 L445,420 A40,40 0 0 0 365,420 L365,570 A55,55 0 0 0 475,570 L475,440"/>
+      <!-- neck -->
+      <path d="M420,380 L420,362"/>
+    </g>
+  </g>
+
+  <!-- Open hand -->
+  <circle cx="650" cy="365" r="20" fill="url(#head)" stroke="#140F3A" stroke-width="6" stroke-opacity="0.55"/>
+
+  <!-- Head with shades and a smirk -->
+  <g filter="url(#drop)">
+    <circle cx="420" cy="312" r="58" fill="url(#head)"/>
+  </g>
+  <path d="M368,296 L472,296 L468,312 Q462,336 440,334 Q426,332 422,312 L418,312 Q414,332 400,334 Q378,336 372,312 Z" fill="#111122"/>
+  <path d="M380,302 L398,302" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M402,348 Q420,358 440,344" stroke="#111122" stroke-width="7" stroke-linecap="round" fill="none"/>
+
+  <!-- Motion lines between hand and photo -->
+  <g stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.85">
+    <path d="M640,420 L652,462"/>
+    <path d="M680,408 L694,452"/>
+    <path d="M720,420 L732,458"/>
+  </g>
+
+  <!-- Falling photo -->
+  <g transform="translate(700 600) rotate(16)" filter="url(#drop)">
+    <rect x="-92" y="-104" width="184" height="212" rx="12" fill="#FFFFFF"/>
+    <rect x="-76" y="-88" width="152" height="146" rx="4" fill="url(#sky)"/>
+    <circle cx="38" cy="-50" r="20" fill="#FFD23F"/>
+    <path d="M-76,58 L-30,-6 L4,34 L30,6 L76,58 Z" fill="#2FB36B"/>
+    <path d="M-76,58 L-30,-6 L-10,20 L-40,58 Z" fill="#1F8F52"/>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#FFE27A">
+    <path d="M770,250 l10,26 l26,10 l-26,10 l-10,26 l-10,-26 l-26,-10 l26,-10 z"/>
+    <path d="M250,330 l6,16 l16,6 l-16,6 l-6,16 l-6,-16 l-16,-6 l16,-6 z"/>
+  </g>
+</svg>
