@@ -50,7 +50,7 @@ That compiles the app, copies it to `~/Applications` and opens it. Run the same 
 | Pin | Keeps items at the top and stops them being removed automatically. |
 | Rename | Right-click › Rename… gives an item a title (titles count for category matching). |
 | Search | Search field in the toolbar filters titles and text. |
-| Menu bar | The clipboard icon shows up to 99 items (pinned first, numbered; ⌘1–⌘9 copy the first nine). Set the number in Settings › Appearance. |
+| Menu bar | The net icon shows up to 99 items (pinned first, numbered; ⌘1–⌘9 copy the first nine). Set the number in Settings › Appearance. |
 
 ## Settings (⌘,)
 
@@ -97,6 +97,7 @@ The *Build* workflow (`.github/workflows/build.yml`) runs on one of GitHub's Mac
 | `Sources/OCR.swift` | Reads text from an image with Vision. ~20 lines — a good one to read first. |
 | `Sources/ContentView.swift` | The main window: list, detail pane, drop zone, right-click menu. |
 | `Sources/SettingsView.swift` | The three Settings tabs. |
+| `Sources/NetIcon.swift` | Draws the butterfly-net menu bar icon. |
 | `build.sh` | Compiles everything into `CopyCatch.app` with `swiftc` (no Xcode project needed), and makes the `.dmg` / `.pkg`. |
 
 To work on it in Xcode instead: File › New › Project › macOS App (SwiftUI), delete the generated Swift files, and drag the files from `Sources/` in.
