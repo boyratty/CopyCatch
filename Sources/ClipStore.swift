@@ -17,7 +17,7 @@ final class ClipStore: ObservableObject {
     /// Number of images currently being read. Shows a spinner in the window.
     @Published var ocrInProgress = 0
 
-    /// ~/Library/Application Support/ClipDrop
+    /// ~/Library/Application Support/CopyCatch
     let supportFolder: URL
     let imagesFolder: URL
 
@@ -34,10 +34,11 @@ final class ClipStore: ObservableObject {
     private var categoriesURL: URL { supportFolder.appendingPathComponent("categories.json") }
 
     init() {
+        Self.migrateFromClipDrop()
         Prefs.register()
         let base = FileManager.default
             .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("ClipDrop", isDirectory: true)
+            .appendingPathComponent("CopyCatch", isDirectory: true)
         supportFolder = base
         imagesFolder = base.appendingPathComponent("Images", isDirectory: true)
         try? FileManager.default.createDirectory(at: imagesFolder, withIntermediateDirectories: true)
@@ -52,6 +53,25 @@ final class ClipStore: ObservableObject {
         // Re-check the "keep items for" rule once a minute.
         pruneTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
             Task { @MainActor in self?.prune() }
+        }
+    }
+
+    /// The app used to be called ClipDrop. On first launch as CopyCatch, move the old
+    /// history folder across and copy the old settings, so nothing is lost.
+    private static func migrateFromClipDrop() {
+        let fm = FileManager.default
+        let support = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        let oldFolder = support.appendingPathComponent("ClipDrop", isDirectory: true)
+        let newFolder = support.appendingPathComponent("CopyCatch", isDirectory: true)
+        if fm.fileExists(atPath: oldFolder.path), !fm.fileExists(atPath: newFolder.path) {
+            try? fm.moveItem(at: oldFolder, to: newFolder)
+        }
+
+        let defaults = UserDefaults.standard
+        let newDomain = Bundle.main.bundleIdentifier ?? "local.copycatch.app"
+        if defaults.persistentDomain(forName: newDomain) == nil,
+           let old = defaults.persistentDomain(forName: "local.clipdrop.app") {
+            defaults.setPersistentDomain(old, forName: newDomain)
         }
     }
 
@@ -281,7 +301,7 @@ final class ClipStore: ObservableObject {
     /// Lets the user drag over part of the screen (like ⌘⇧4) and reads the text in it.
     func captureScreenRegion() {
         let url = FileManager.default.temporaryDirectory
-            .appendingPathComponent("clipdrop-\(UUID().uuidString).png")
+            .appendingPathComponent("copycatch-\(UUID().uuidString).png")
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/sbin/screencapture")
         process.arguments = ["-i", "-x", url.path]   // -i interactive selection, -x no sound

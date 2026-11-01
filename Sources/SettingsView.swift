@@ -1,5 +1,5 @@
 // SettingsView.swift
-// ClipDrop > Settings… (⌘,)
+// CopyCatch > Settings… (⌘,)
 
 import AppKit
 import SwiftUI
@@ -143,7 +143,7 @@ struct AppearanceSettings: View {
                     .padding(.vertical, 4)
             }
             Section("Menu bar") {
-                Toggle("Show ClipDrop in the menu bar", isOn: $showMenuBarIcon)
+                Toggle("Show CopyCatch in the menu bar", isOn: $showMenuBarIcon)
                 Stepper(value: $menuBarItemCount, in: 5...99, step: 1) {
                     Text("Menu shows up to \(menuBarItemCount) items")
                 }

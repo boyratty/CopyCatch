@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>ClipDrop</string>
+    <string>CopyCatch</string>
     <key>CFBundleDisplayName</key>
-    <string>ClipDrop</string>
+    <string>CopyCatch</string>
     <key>CFBundleIdentifier</key>
-    <string>local.clipdrop.app</string>
+    <string>local.copycatch.app</string>
     <key>CFBundleExecutable</key>
-    <string>ClipDrop</string>
+    <string>CopyCatch</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon</string>
     <key>CFBundlePackageType</key>

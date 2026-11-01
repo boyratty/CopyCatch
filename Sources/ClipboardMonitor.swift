@@ -11,7 +11,7 @@ final class ClipboardMonitor {
     private var timer: Timer?
 
     /// Password managers and other apps mark secret or temporary copies with these types
-    /// (see nspasteboard.org). ClipDrop never records them.
+    /// (see nspasteboard.org). CopyCatch never records them.
     private static let ignoredTypes: [NSPasteboard.PasteboardType] = [
         "org.nspasteboard.ConcealedType",
         "org.nspasteboard.TransientType",

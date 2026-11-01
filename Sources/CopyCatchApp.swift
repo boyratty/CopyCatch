@@ -1,4 +1,4 @@
-// ClipDropApp.swift
+// CopyCatchApp.swift
 // Entry point: the main window, the Settings window and the menu bar icon.
 
 import AppKit
@@ -10,13 +10,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 @main
-struct ClipDropApp: App {
+struct CopyCatchApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var store = ClipStore()
     @AppStorage(Prefs.showMenuBarIcon) private var showMenuBarIcon = true
 
     var body: some Scene {
-        Window("ClipDrop", id: "main") {
+        Window("CopyCatch", id: "main") {
             ContentView()
                 .environmentObject(store)
                 .frame(minWidth: 620, minHeight: 380)
@@ -36,7 +36,7 @@ struct ClipDropApp: App {
                 .environmentObject(store)
         }
 
-        MenuBarExtra("ClipDrop", systemImage: "doc.on.clipboard", isInserted: $showMenuBarIcon) {
+        MenuBarExtra("CopyCatch", systemImage: "doc.on.clipboard", isInserted: $showMenuBarIcon) {
             MenuBarView()
                 .environmentObject(store)
         }
@@ -66,10 +66,10 @@ struct MenuBarView: View {
             }
         }
         if ordered.count > limit {
-            Text("\(ordered.count - limit) more in the ClipDrop window")
+            Text("\(ordered.count - limit) more in the CopyCatch window")
         }
         Divider()
-        Button("Open ClipDrop") {
+        Button("Open CopyCatch") {
             openWindow(id: "main")
             NSApp.activate(ignoringOtherApps: true)
         }
@@ -84,7 +84,7 @@ struct MenuBarView: View {
                 NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
             }
         }
-        Button("Quit ClipDrop") { NSApp.terminate(nil) }
+        Button("Quit CopyCatch") { NSApp.terminate(nil) }
             .keyboardShortcut("q")
     }
 }
