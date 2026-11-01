@@ -118,7 +118,14 @@
         <path d="M 430 625 L 528 612 L 520 712" stroke-width="24"/>
         <path d="M 420 628 L 352 712 L 268 770" stroke-width="24"/>
       </g>
-      <circle cx="410" cy="378" r="44" fill="url(#steel)" filter="url(#sh)"/>
+      <!-- rave smiley head -->
+      <g transform="translate(410 378)" filter="url(#sh)">
+        <circle r="46" fill="#FFE11A" stroke="#111111" stroke-width="5"/>
+        <ellipse cx="-15" cy="-13" rx="6" ry="12" fill="#111111"/>
+        <ellipse cx="15" cy="-13" rx="6" ry="12" fill="#111111"/>
+        <path d="M -30 6 Q 0 44 30 6" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+        <path d="M -33 2 Q -32 8 -27 10 M 33 2 Q 32 8 27 10" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+      </g>
     </g>
   </g>
 </svg>
