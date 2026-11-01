@@ -2,6 +2,18 @@
 
 A local clipboard-history app for macOS (13 Ventura or later) that also reads text from images, on-device, using Apple's Vision framework (the engine behind Live Text). Nothing leaves your Mac.
 
+## Download
+
+Get the latest `.dmg` (drag to Applications) or `.pkg` (installer) from the [Releases page](https://github.com/boyratty/CopyCatch/releases). Both run on Intel and Apple Silicon Macs.
+
+CopyCatch isn't signed with an Apple Developer ID yet, so the first time you open it macOS will say it can't check the app for malicious software. To open it anyway:
+
+1. Click **Done** (or **OK**) on the warning.
+2. Go to **System Settings › Privacy & Security**, scroll down, and click **Open Anyway** next to the CopyCatch message.
+3. Open CopyCatch again and confirm.
+
+You only need to do this once. If you'd rather avoid it, build the app yourself as described below: apps you build on your own Mac open without a warning.
+
 ## Build and run
 
 1. If you've never compiled anything on this Mac: `xcode-select --install` (full Xcode not needed).
@@ -54,6 +66,26 @@ CopyCatch used to be called ClipDrop. The first time CopyCatch opens, it moves y
 
 Copies marked as concealed by password managers (the `org.nspasteboard.ConcealedType` convention) are never recorded.
 
+## Making the installers
+
+```bash
+./build.sh universal   # one app that runs on Intel and Apple Silicon
+./build.sh dmg         # → build/CopyCatch-<version>.dmg
+./build.sh pkg         # → build/CopyCatch-<version>.pkg (installs to /Applications; works with Jamf/Intune)
+./build.sh release     # both
+```
+
+The version number comes from `CFBundleShortVersionString` in `Info.plist`.
+
+**Publishing a release:** GitHub builds it for you. Tag a version and push the tag:
+
+```bash
+git tag v1.1.0
+git push origin v1.1.0
+```
+
+The *Build* workflow (`.github/workflows/build.yml`) runs on one of GitHub's Macs, makes the `.dmg` and `.pkg` with that version number, and attaches them to a new release on the Releases page. It also checks that every pull request still compiles.
+
 ## How the code is organised
 
 | File | What it does |
@@ -65,7 +97,7 @@ Copies marked as concealed by password managers (the `org.nspasteboard.Concealed
 | `Sources/OCR.swift` | Reads text from an image with Vision. ~20 lines — a good one to read first. |
 | `Sources/ContentView.swift` | The main window: list, detail pane, drop zone, right-click menu. |
 | `Sources/SettingsView.swift` | The three Settings tabs. |
-| `build.sh` | Compiles everything into `CopyCatch.app` with `swiftc` — no Xcode project needed. |
+| `build.sh` | Compiles everything into `CopyCatch.app` with `swiftc` (no Xcode project needed), and makes the `.dmg` / `.pkg`. |
 
 To work on it in Xcode instead: File › New › Project › macOS App (SwiftUI), delete the generated Swift files, and drag the files from `Sources/` in.
 

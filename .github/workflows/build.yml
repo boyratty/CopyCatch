@@ -1,0 +1,46 @@
+# Builds CopyCatch on one of GitHub's Macs.
+#  - On every pull request and push to main: checks that the app still compiles.
+#  - When you push a version tag (e.g. v1.1.0): also makes the .dmg and .pkg
+#    and attaches them to a GitHub Release, so people can just download them.
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to create the Release
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build universal app, .dmg and .pkg
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            export VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          ./build.sh release
+          lipo -archs build/CopyCatch.app/Contents/MacOS/CopyCatch
+
+      - name: Keep the files with this run
+        uses: actions/upload-artifact@v4
+        with:
+          name: CopyCatch-installers
+          path: |
+            build/*.dmg
+            build/*.pkg
+
+      - name: Attach to a GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" build/*.dmg build/*.pkg \
+              --title "CopyCatch $GITHUB_REF_NAME" --generate-notes \
+          || gh release upload "$GITHUB_REF_NAME" build/*.dmg build/*.pkg --clobber
