@@ -58,6 +58,9 @@
         <circle cx="22" cy="-14" r="11" fill="#FFD447"/>
         <path d="M -50 36 L -14 -6 L 10 18 L 26 4 L 50 30 L 50 36 Z" fill="#2E9E6A"/>
       </g>
+      <!-- letters E and B -->
+      <text x="815" y="720" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="120" fill="#FF4757" transform="rotate(-14 815 720)" text-anchor="middle">E</text>
+      <text x="420" y="390" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="110" fill="#5CB8FF" transform="rotate(12 420 390)" text-anchor="middle">B</text>
       <!-- letter c -->
       <text x="860" y="520" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="96" fill="#7CF2C1" transform="rotate(20 860 520)" text-anchor="middle">c</text>
     </g>
@@ -80,7 +83,7 @@
 
     <!-- big butterfly net -->
     <g filter="url(#sh)">
-      <line x1="376" y1="539" x2="497" y2="465" stroke="#8B5A2B" stroke-width="16" stroke-linecap="round"/>
+      <line x1="376" y1="539" x2="497" y2="465" stroke="#E5383B" stroke-width="16" stroke-linecap="round"/>
       <g transform="translate(625 400) rotate(-32) scale(1.75)">
         <path d="M -78 0 Q -60 120 10 150 Q 60 120 78 0 Z" fill="#FFFFFF" fill-opacity="0.16" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="3"/>
         <g stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2" fill="none">
