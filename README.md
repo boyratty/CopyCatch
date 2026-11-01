@@ -68,3 +68,7 @@ Copies marked as concealed by password managers (the `org.nspasteboard.Concealed
 To work on it in Xcode instead: File › New › Project › macOS App (SwiftUI), delete the generated Swift files, and drag the files from `Sources/` in.
 
 Easy first changes to try: add a category in `ClipCategory.examples` (Models.swift), change the 0.5-second check interval (ClipboardMonitor.swift), or change the 99 cap in the menu bar (`min(99, …)` in ClipDropApp.swift).
+
+## License
+
+MIT, see [LICENSE](LICENSE). Free to use, change and share; no warranty.
