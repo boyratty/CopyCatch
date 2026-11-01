@@ -99,7 +99,7 @@
     </g>
 
     <!-- "Catch" riding on the rim of the net -->
-    <text x="608" y="362" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="66" fill="#FFFFFF" stroke="#2B2463" stroke-width="5" paint-order="stroke" transform="rotate(-32 608 362)" text-anchor="middle" filter="url(#sh)">Catch</text>
+    <text x="610" y="366" font-family="'Big Caslon', 'Libre Caslon Display', serif" font-weight="500" font-size="84" fill="#FFFFFF" stroke="#2B2463" stroke-width="7" paint-order="stroke" transform="rotate(-32 610 366)" text-anchor="middle" filter="url(#sh)">Catch</text>
 
     <!-- smaller paperclip figure, bottom left -->
     <g transform="translate(3 323) scale(0.68)">
