@@ -64,7 +64,7 @@
       </g>
       <!-- letters E and B -->
       <text x="815" y="720" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="120" fill="#FF4757" transform="rotate(-14 815 720)" text-anchor="middle">E</text>
-      <text x="420" y="390" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="110" fill="#5CB8FF" transform="rotate(12 420 390)" text-anchor="middle">B</text>
+      <text x="420" y="390" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="78" fill="#5CB8FF" transform="rotate(12 420 390)" text-anchor="middle">B</text>
       <!-- letter c -->
       <text x="860" y="520" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="96" fill="#7CF2C1" transform="rotate(20 860 520)" text-anchor="middle">c</text>
     </g>
@@ -103,7 +103,7 @@
     </g>
 
     <!-- "Catch" riding on the rim of the net -->
-    <text x="610" y="366" font-family="'Big Caslon', 'Libre Caslon Display', serif" font-weight="500" font-size="84" fill="#FFFFFF" stroke="#2B2463" stroke-width="7" paint-order="stroke" transform="rotate(-32 610 366)" text-anchor="middle" filter="url(#sh)">Catch</text>
+    <text x="592" y="338" font-family="'Big Caslon', 'Libre Caslon Display', serif" font-weight="500" font-size="84" fill="#FFFFFF" stroke="#2B2463" stroke-width="7" paint-order="stroke" transform="rotate(-32 592 338)" text-anchor="middle" filter="url(#sh)">Catch</text>
 
     </g>
 
