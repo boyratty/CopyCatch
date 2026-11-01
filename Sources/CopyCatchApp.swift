@@ -36,9 +36,11 @@ struct CopyCatchApp: App {
                 .environmentObject(store)
         }
 
-        MenuBarExtra("CopyCatch", systemImage: "doc.on.clipboard", isInserted: $showMenuBarIcon) {
+        MenuBarExtra(isInserted: $showMenuBarIcon) {
             MenuBarView()
                 .environmentObject(store)
+        } label: {
+            Image(nsImage: NetIcon.image)   // butterfly net, drawn in NetIcon.swift
         }
     }
 }
