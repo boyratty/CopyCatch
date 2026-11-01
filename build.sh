@@ -64,7 +64,7 @@ build_app() {
 make_dmg() {
     local dmg="build/$NAME-$VERSION.dmg"
     local stage="build/dmg"
-    echo "→ Making $dmg…"
+    echo "→ Making ${dmg}…"
     rm -rf "$stage" "$dmg"
     mkdir -p "$stage"
     cp -R "$APP" "$stage/"
@@ -78,7 +78,7 @@ make_pkg() {
     local pkg="build/$NAME-$VERSION.pkg"
     local root="build/pkgroot"
     local plist="build/component.plist"
-    echo "→ Making $pkg…"
+    echo "→ Making ${pkg}…"
     rm -rf "$root" "$pkg"
     mkdir -p "$root"
     cp -R "$APP" "$root/"
