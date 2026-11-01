@@ -1,103 +1,95 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4B37B8"/>
-      <stop offset="1" stop-color="#181243"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5B45D6"/>
+      <stop offset="1" stop-color="#1B1450"/>
     </linearGradient>
-    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#D9DEEA"/>
+      <stop offset="1" stop-color="#9AA3BA"/>
     </linearGradient>
-    <radialGradient id="floor" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.35"/>
+    <radialGradient id="glow" cx="0.62" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.22"/>
       <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="wire" gradientUnits="userSpaceOnUse" x1="300" y1="250" x2="560" y2="800">
-      <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.5" stop-color="#D5DBE6"/>
-      <stop offset="1" stop-color="#9AA4B6"/>
-    </linearGradient>
-    <radialGradient id="head" cx="0.38" cy="0.32" r="0.75">
-      <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#AEB7C8"/>
-    </radialGradient>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#5EC8FF"/>
-      <stop offset="1" stop-color="#B8E9FF"/>
-    </linearGradient>
-    <clipPath id="squircle">
-      <rect x="100" y="100" width="824" height="824" rx="185"/>
-    </clipPath>
-    <filter id="drop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    <clipPath id="sq"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0B0828" flood-opacity="0.45"/>
     </filter>
   </defs>
 
-  <!-- Background tile -->
-  <g clip-path="url(#squircle)">
+  <g clip-path="url(#sq)">
     <rect x="100" y="100" width="824" height="824" fill="url(#bg)"/>
-    <!-- Spotlight -->
-    <polygon points="430,100 530,100 790,924 170,924" fill="url(#beam)"/>
-    <ellipse cx="480" cy="805" rx="300" ry="55" fill="url(#floor)"/>
-  </g>
+    <rect x="100" y="100" width="824" height="824" fill="url(#glow)"/>
+    <ellipse cx="420" cy="868" rx="210" ry="26" fill="#0B0828" opacity="0.35"/>
 
-  <!-- Shadow under feet -->
-  <ellipse cx="425" cy="800" rx="120" ry="16" fill="#0B0826" opacity="0.45"/>
-
-  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Dark outline pass so the wire reads at small sizes -->
-    <g stroke="#140F3A" stroke-width="40" opacity="0.55">
-      <path d="M420,622 L372,786 L330,786 M420,622 L470,786 L512,786"/>
-      <path d="M475,455 L560,395 L640,368"/>
-      <path d="M365,455 L305,520 L360,575"/>
-      <path d="M395,470 L395,560 A25,25 0 0 0 445,560 L445,420 A40,40 0 0 0 365,420 L365,570 A55,55 0 0 0 475,570 L475,440"/>
-      <path d="M420,380 L420,362"/>
+    <!-- speed lines behind flying items -->
+    <g stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="8" stroke-linecap="round">
+      <line x1="830" y1="205" x2="900" y2="175"/>
+      <line x1="855" y1="330" x2="915" y2="320"/>
+      <line x1="815" y1="455" x2="880" y2="470"/>
     </g>
-    <!-- Silver wire -->
-    <g stroke="url(#wire)" stroke-width="24">
-      <!-- legs and feet -->
-      <path d="M420,622 L372,786 L330,786 M420,622 L470,786 L512,786"/>
-      <!-- raised arm (the drop) -->
-      <path d="M475,455 L560,395 L640,368"/>
-      <!-- hand on hip -->
-      <path d="M365,455 L305,520 L360,575"/>
-      <!-- paperclip body -->
-      <path d="M395,470 L395,560 A25,25 0 0 0 445,560 L445,420 A40,40 0 0 0 365,420 L365,570 A55,55 0 0 0 475,570 L475,440"/>
-      <!-- neck -->
-      <path d="M420,380 L420,362"/>
+
+    <!-- flying items -->
+    <g filter="url(#sh)">
+      <!-- image card -->
+      <g transform="translate(770 300) rotate(14)">
+        <rect x="-62" y="-48" width="124" height="96" rx="14" fill="#FFFFFF"/>
+        <rect x="-50" y="-36" width="100" height="72" rx="6" fill="#7FD3F7"/>
+        <circle cx="22" cy="-14" r="11" fill="#FFD447"/>
+        <path d="M -50 36 L -14 -6 L 10 18 L 26 4 L 50 30 L 50 36 Z" fill="#2E9E6A"/>
+      </g>
+      <!-- PDF page -->
+      <g transform="translate(745 470) rotate(-12)">
+        <path d="M -44 -58 H 22 L 46 -34 V 58 H -44 Z" fill="#FFFFFF"/>
+        <path d="M 22 -58 V -34 H 46 Z" fill="#D0D5E2"/>
+        <rect x="-44" y="-6" width="90" height="32" rx="4" fill="#E5484D"/>
+        <text x="1" y="18" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF" text-anchor="middle">PDF</text>
+        <rect x="-32" y="-44" width="44" height="7" rx="3" fill="#C3C9D8"/>
+        <rect x="-32" y="-28" width="60" height="7" rx="3" fill="#C3C9D8"/>
+        <rect x="-32" y="36" width="54" height="7" rx="3" fill="#C3C9D8"/>
+      </g>
+      <!-- letters -->
+      <text x="790" y="225" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="96" fill="#FFD447" transform="rotate(-16 790 225)" text-anchor="middle">A</text>
+      <text x="610" y="175" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="70" fill="#FF8A65" transform="rotate(12 610 175)" text-anchor="middle">b</text>
+      <text x="880" y="410" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="64" fill="#7CF2C1" transform="rotate(20 880 410)" text-anchor="middle">c</text>
     </g>
-  </g>
 
-  <!-- Open hand -->
-  <circle cx="650" cy="365" r="20" fill="url(#head)" stroke="#140F3A" stroke-width="6" stroke-opacity="0.55"/>
+    <!-- butterfly net: handle from hand up to hoop -->
+    <g filter="url(#sh)">
+      <line x1="548" y1="318" x2="640" y2="250" stroke="#8B5A2B" stroke-width="16" stroke-linecap="round"/>
+      <!-- net bag -->
+      <g transform="translate(700 265) rotate(-28)">
+        <path d="M -78 0 Q -60 120 10 150 Q 60 120 78 0 Z" fill="#FFFFFF" fill-opacity="0.22" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="5"/>
+        <g stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="3" fill="none">
+          <path d="M -40 2 Q -30 100 10 150"/>
+          <path d="M 0 2 Q 4 90 10 150"/>
+          <path d="M 40 2 Q 40 100 10 150"/>
+          <path d="M -72 40 Q 0 62 74 40"/>
+          <path d="M -62 82 Q 4 104 66 82"/>
+          <path d="M -36 122 Q 8 136 46 122"/>
+        </g>
+        <ellipse cx="0" cy="0" rx="80" ry="24" fill="none" stroke="#C9CFDD" stroke-width="12"/>
+      </g>
+    </g>
 
-  <!-- Head with shades and a smirk -->
-  <g filter="url(#drop)">
-    <circle cx="420" cy="312" r="58" fill="url(#head)"/>
-  </g>
-  <path d="M368,296 L472,296 L468,312 Q462,336 440,334 Q426,332 422,312 L418,312 Q414,332 400,334 Q378,336 372,312 Z" fill="#111122"/>
-  <path d="M380,302 L398,302" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
-  <path d="M402,348 Q420,358 440,344" stroke="#111122" stroke-width="7" stroke-linecap="round" fill="none"/>
-
-  <!-- Motion lines between hand and photo -->
-  <g stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.85">
-    <path d="M640,420 L652,462"/>
-    <path d="M680,408 L694,452"/>
-    <path d="M720,420 L732,458"/>
-  </g>
-
-  <!-- Falling photo -->
-  <g transform="translate(700 600) rotate(16)" filter="url(#drop)">
-    <rect x="-92" y="-104" width="184" height="212" rx="12" fill="#FFFFFF"/>
-    <rect x="-76" y="-88" width="152" height="146" rx="4" fill="url(#sky)"/>
-    <circle cx="38" cy="-50" r="20" fill="#FFD23F"/>
-    <path d="M-76,58 L-30,-6 L4,34 L30,6 L76,58 Z" fill="#2FB36B"/>
-    <path d="M-76,58 L-30,-6 L-10,20 L-40,58 Z" fill="#1F8F52"/>
-  </g>
-
-  <!-- Sparkles -->
-  <g fill="#FFE27A">
-    <path d="M770,250 l10,26 l26,10 l-26,10 l-10,26 l-10,-26 l-26,-10 l26,-10 z"/>
-    <path d="M250,330 l6,16 l16,6 l-16,6 l-6,16 l-6,-16 l-16,-6 l16,-6 z"/>
+    <!-- the paperclip stick figure, leaping -->
+    <g filter="url(#sh)" stroke="url(#steel)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- body is a paperclip, tilted with the leap -->
+      <g transform="translate(455 525) rotate(18)">
+        <path d="M 12 -44 V 62 A 15 15 0 0 1 -18 62 V -78 A 24 24 0 0 1 30 -78 V 84 A 32 32 0 0 1 -34 84 V -40" stroke-width="15"/>
+      </g>
+      <!-- raised arm holding the net -->
+      <path d="M 448 430 L 505 370 L 548 318" stroke-width="22"/>
+      <!-- trailing arm -->
+      <path d="M 432 438 L 370 470 L 318 448" stroke-width="22"/>
+      <!-- front leg, knee up -->
+      <path d="M 430 625 L 528 612 L 520 712" stroke-width="24"/>
+      <!-- back leg, stretched out -->
+      <path d="M 420 628 L 352 712 L 268 770" stroke-width="24"/>
+    </g>
+    <!-- head -->
+    <circle cx="410" cy="378" r="44" fill="url(#steel)" filter="url(#sh)"/>
   </g>
 </svg>
