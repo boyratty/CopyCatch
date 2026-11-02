@@ -1,5 +1,7 @@
 # CopyCatch
 
+<img width="1280" height="640" alt="CopyCatch-social-preview" src="https://github.com/user-attachments/assets/a4eeb404-7b56-4318-86d5-92418795897b" />
+
 A local clipboard-history app for macOS (13 Ventura or later) that also reads text from images, on-device, using Apple's Vision framework (the engine behind Live Text). Nothing leaves your Mac.
 
 ## Download
