@@ -6,7 +6,7 @@
 
 <img width="1336" height="827" alt="Screenshot 2026-11-02 at 00 42 07" src="https://github.com/user-attachments/assets/f85f5d68-cb72-4e37-a621-42983d48cbdc" />
 
-<img width="868" height="831" alt="Screenshot 2026-11-02 at 00 33 48" src="https://github.com/user-attachments/assets/403aeec3-414c-480b-bd6b-80d8b1d7dbc1" />
+<img width="749" height="663" alt="Screenshot 2026-11-02 at 00 48 18" src="https://github.com/user-attachments/assets/07df110c-88f5-47d9-adc3-7c330305984e" />
 
 <img width="1336" height="827" alt="Screenshot 2026-11-02 at 00 44 20" src="https://github.com/user-attachments/assets/d6eea7ae-e873-4533-92d9-b8b4bcdbfa8b" />
 
