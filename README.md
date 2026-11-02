@@ -2,6 +2,14 @@
 
 <img width="1280" height="640" alt="CopyCatch-social-preview" src="https://github.com/user-attachments/assets/a4eeb404-7b56-4318-86d5-92418795897b" />
 
+<img width="1546" height="996" alt="Screenshot 2026-11-02 at 00 40 45" src="https://github.com/user-attachments/assets/a120953a-016a-416b-8fb9-37ce8be60c70" />
+
+<img width="1336" height="827" alt="Screenshot 2026-11-02 at 00 42 07" src="https://github.com/user-attachments/assets/f85f5d68-cb72-4e37-a621-42983d48cbdc" />
+
+<img width="868" height="831" alt="Screenshot 2026-11-02 at 00 33 48" src="https://github.com/user-attachments/assets/403aeec3-414c-480b-bd6b-80d8b1d7dbc1" />
+
+<img width="1336" height="827" alt="Screenshot 2026-11-02 at 00 44 20" src="https://github.com/user-attachments/assets/d6eea7ae-e873-4533-92d9-b8b4bcdbfa8b" />
+
 A local clipboard-history app for macOS (13 Ventura or later) that also reads text from images, pdf + more, on-device, using Apple's Vision framework (the engine behind Live Text). Nothing leaves your Mac.
 
 ## Download
