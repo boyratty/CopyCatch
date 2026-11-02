@@ -1,14 +1,16 @@
 # CopyCatch
 
-<img width="1280" height="640" alt="CopyCatch-app icon" src="https://github.com/user-attachments/assets/a4eeb404-7b56-4318-86d5-92418795897b" />
+<img width="1280" height="640" alt="CopyCatch app icon: a stick figure catching letters, images and a PDF in a butterfly net" src="https://github.com/user-attachments/assets/a4eeb404-7b56-4318-86d5-92418795897b" />
 
-<img width="1546" height="996" alt="Screenshot - Finder" src="https://github.com/user-attachments/assets/a120953a-016a-416b-8fb9-37ce8be60c70" />
+## Screenshots
 
-<img width="1336" height="827" alt="Screenshot - Result1" src="https://github.com/user-attachments/assets/f85f5d68-cb72-4e37-a621-42983d48cbdc" />
+<img width="1546" height="996" alt="Dragging an image from Finder onto the CopyCatch window to read its text" src="https://github.com/user-attachments/assets/a120953a-016a-416b-8fb9-37ce8be60c70" />
 
-<img width="749" height="663" alt="Screenshot - Webpage" src="https://github.com/user-attachments/assets/07df110c-88f5-47d9-adc3-7c330305984e" />
+<img width="1336" height="827" alt="CopyCatch showing the text it read from the image, saved in clipboard history" src="https://github.com/user-attachments/assets/f85f5d68-cb72-4e37-a621-42983d48cbdc" />
 
-<img width="1336" height="827" alt="Screenshot - Result2" src="https://github.com/user-attachments/assets/d6eea7ae-e873-4533-92d9-b8b4bcdbfa8b" />
+<img width="749" height="663" alt="Selecting part of a webpage on screen to capture its text" src="https://github.com/user-attachments/assets/07df110c-88f5-47d9-adc3-7c330305984e" />
+
+<img width="1336" height="827" alt="CopyCatch showing the text captured from the webpage" src="https://github.com/user-attachments/assets/d6eea7ae-e873-4533-92d9-b8b4bcdbfa8b" />
 
 A local clipboard-history app for macOS (13 Ventura or later) that also reads text from images, pdf + more, on-device, using Apple's Vision framework (the engine behind Live Text). Nothing leaves your Mac.
 
