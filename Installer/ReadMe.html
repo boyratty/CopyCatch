@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Read Me: CopyCatch</title>
+<style>
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.4; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 16px; margin-top: 18px; }
+  td { vertical-align: top; padding: 2px 10px 2px 0; }
+</style>
+</head>
+<body>
+
+<h1>CopyCatch</h1>
+<p><b>Version __VERSION__</b> · for macOS 13 Ventura or later · Intel and Apple Silicon</p>
+
+<p>CopyCatch keeps a history of everything you copy, and it can read the text in pictures, screenshots and PDFs so you can copy and paste it. It all happens on your Mac: nothing you copy is ever sent anywhere.</p>
+
+<h2>Install</h2>
+<ol>
+  <li>Drag <b>CopyCatch</b> onto the <b>Applications</b> folder in this window.</li>
+  <li>Open <b>Applications</b> and double-click <b>CopyCatch</b>.</li>
+</ol>
+
+<h2>The first time you open it</h2>
+<p>CopyCatch isn't signed with an Apple Developer ID yet, so macOS will say it can't check the app for malicious software. This only happens once:</p>
+<ol>
+  <li>Click <b>Done</b> (or <b>OK</b>) on the warning.</li>
+  <li>Go to <b>System Settings › Privacy &amp; Security</b>, scroll down, and click <b>Open Anyway</b> next to the CopyCatch message.</li>
+  <li>Open CopyCatch again and click <b>Open</b> to confirm.</li>
+</ol>
+<p>Two more permissions you may be asked for:</p>
+<ul>
+  <li><b>Screen Recording</b>, for <i>Capture Text from Screen</i> (⌘⇧2): System Settings › Privacy &amp; Security › Screen &amp; System Audio Recording › turn on CopyCatch, then reopen the app.</li>
+  <li><b>Reading what other apps copy</b>, on newer versions of macOS: choose <b>Allow</b>.</li>
+</ul>
+
+<h2>What it does</h2>
+<table>
+  <tr><td><b>Clipboard history</b></td><td>Everything you copy appears at the top of the list. Copying the same thing again moves it back to the top.</td></tr>
+  <tr><td><b>Read text from images</b></td><td>Drag images or PDFs onto the window, press ⌘O to open files, press ⌘⇧2 and drag over part of the screen, or simply copy an image. The text it finds is saved in your history.</td></tr>
+  <tr><td><b>Categories</b></td><td>Groups the list using keywords you choose, for example Links, Tickets, Commands or Emails.</td></tr>
+  <tr><td><b>Select several items</b></td><td>Click one, ⇧-click to select a range, ⌘-click to add or remove single items. Then copy, delete or right-click them all at once.</td></tr>
+  <tr><td><b>Copy</b></td><td>Double-click an item, press ⌘C, or use the Copy button. Several items are joined together with the separator you choose in Settings.</td></tr>
+  <tr><td><b>Lowercase</b></td><td>⌘⇧L copies the text in lowercase without changing the saved item.</td></tr>
+  <tr><td><b>Pin</b></td><td>Keeps an item at the top and stops it being removed automatically.</td></tr>
+  <tr><td><b>Rename</b></td><td>Right-click › Rename… to give an item a title. Titles count for category matching too.</td></tr>
+  <tr><td><b>Search</b></td><td>The search field filters by title and text.</td></tr>
+  <tr><td><b>Menu bar</b></td><td>Click the butterfly-net icon for quick access to your latest items. ⌘1 to ⌘9 copy the first nine.</td></tr>
+</table>
+
+<h2>Settings (⌘,)</h2>
+<ul>
+  <li><b>General</b>: turn recording on or off, read text from copied images, how many items to keep (25 to 1000), how long items can stay (forever, or 1 hour up to 90 days), the separator for copying several items, and a button to clear all unpinned items.</li>
+  <li><b>Categories</b>: give each category a name and some comma-separated keywords. An item goes into the first category whose keywords appear in its title or text. Drag categories to change which one wins.</li>
+  <li><b>Appearance</b>: the list font and size, with a live preview, and whether to show the menu bar icon and how many items its menu shows.</li>
+</ul>
+
+<h2>Your privacy</h2>
+<ul>
+  <li>Your history is stored only on this Mac, in <b>~/Library/Application Support/CopyCatch</b>. To wipe it, use <b>Clear All Unpinned Items…</b> in Settings › General, or quit CopyCatch and delete that folder.</li>
+  <li>Passwords copied from password managers that mark them as private are never saved.</li>
+  <li>On a work Mac, check your company's IT policy first: a clipboard history keeps whatever you copy.</li>
+</ul>
+
+<h2>Uninstall</h2>
+<p>Quit CopyCatch, drag it from Applications to the Bin, and delete the <b>~/Library/Application Support/CopyCatch</b> folder.</p>
+
+<h2>More</h2>
+<p>Updates, source code and help: <a href="https://github.com/boyratty/CopyCatch">github.com/boyratty/CopyCatch</a><br>
+Free and open source under the MIT License.</p>
+
+</body>
+</html>

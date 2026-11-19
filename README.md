@@ -16,7 +16,7 @@ A local clipboard-history app for macOS (13 Ventura or later) that also reads te
 
 ## Download
 
-Get the latest `.dmg` (drag to Applications) or `.pkg` (installer) from the [Releases page](https://github.com/boyratty/CopyCatch/releases). Both run on Intel and Apple Silicon Macs.
+Get the latest `.dmg` (drag to Applications) or `.pkg` (installer) from the [Releases page](https://github.com/boyratty/CopyCatch/releases). Both run on Intel and Apple Silicon Macs. The `.dmg` includes a short **Read Me** for people installing the app, and the same Read Me is attached to each release.
 
 CopyCatch isn't signed with an Apple Developer ID yet, so the first time you open it macOS will say it can't check the app for malicious software. To open it anyway:
 
@@ -82,7 +82,7 @@ Copies marked as concealed by password managers (the `org.nspasteboard.Concealed
 
 ```bash
 ./build.sh universal   # one app that runs on Intel and Apple Silicon
-./build.sh dmg         # → build/CopyCatch-<version>.dmg
+./build.sh dmg         # → build/CopyCatch-<version>.dmg (app + Applications shortcut + Read Me)
 ./build.sh pkg         # → build/CopyCatch-<version>.pkg (installs to /Applications; works with Jamf/Intune)
 ./build.sh release     # both
 ```
@@ -110,6 +110,7 @@ The *Build* workflow (`.github/workflows/build.yml`) runs on one of GitHub's Mac
 | `Sources/ContentView.swift` | The main window: list, detail pane, drop zone, right-click menu. |
 | `Sources/SettingsView.swift` | The three Settings tabs. |
 | `Sources/NetIcon.swift` | Draws the butterfly-net menu bar icon. |
+| `Installer/ReadMe.html` | The Read Me that goes inside the `.dmg` and on the Releases page. Edit this to change it; `build.sh` turns it into `Read Me.rtf`. |
 | `build.sh` | Compiles everything into `CopyCatch.app` with `swiftc` (no Xcode project needed), and makes the `.dmg` / `.pkg`. |
 
 To work on it in Xcode instead: File › New › Project › macOS App (SwiftUI), delete the generated Swift files, and drag the files from `Sources/` in.
