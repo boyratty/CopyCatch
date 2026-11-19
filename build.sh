@@ -4,7 +4,7 @@
 #   ./build.sh            build for this Mac only        → build/CopyCatch.app
 #   ./build.sh install    build, copy to ~/Applications and open it
 #   ./build.sh universal  build one app for Intel AND Apple Silicon Macs
-#   ./build.sh dmg        universal build + drag-to-Applications disk image → build/CopyCatch-<version>.dmg
+#   ./build.sh dmg        universal build + drag-to-Applications disk image (with a Read Me) → build/CopyCatch-<version>.dmg
 #   ./build.sh pkg        universal build + installer package (for Jamf, Intune etc.) → build/CopyCatch-<version>.pkg
 #   ./build.sh release    universal build + both the .dmg and the .pkg
 #
@@ -61,6 +61,18 @@ build_app() {
     echo "✓ Built $APP (version $VERSION)"
 }
 
+# Turns Installer/ReadMe.html into a Read Me that opens in TextEdit: build/Read Me.rtf
+make_readme() {
+    local readme="build/Read Me.rtf"
+    local html="build/ReadMe.html"
+    echo "→ Making Read Me…"
+    sed "s/__VERSION__/$VERSION/g" Installer/ReadMe.html > "$html"
+    textutil -convert rtf -output "$readme" "$html"
+    rm "$html"
+    cp "$readme" "build/$NAME-$VERSION-ReadMe.rtf"   # copy with a web-friendly name, for the Releases page
+    echo "✓ Made $readme"
+}
+
 make_dmg() {
     local dmg="build/$NAME-$VERSION.dmg"
     local stage="build/dmg"
@@ -69,6 +81,8 @@ make_dmg() {
     mkdir -p "$stage"
     cp -R "$APP" "$stage/"
     ln -s /Applications "$stage/Applications"   # so people can drag the app straight in
+    make_readme
+    cp "build/Read Me.rtf" "$stage/"
     hdiutil create -volname "$NAME" -srcfolder "$stage" -ov -format UDZO "$dmg" >/dev/null
     rm -rf "$stage"
     echo "✓ Made $dmg"
